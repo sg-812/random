@@ -1,0 +1,169 @@
+<%-include('../Includes/Header.ejs')%>
+<link rel="stylesheet" href="/css/authStyle.css">
+</head>
+</body>
+  <%-include('../Includes/Navbar.ejs')%>
+
+<main>
+  <section>
+    <div class="container py-5 text-light">
+      <div class="authForm p-5 mx-auto">
+        <h2 class="text-light mb-3">Register yourself</h2>
+        <hr />
+        <form
+          action="/auth/sign-up"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+        <div class="error bg-warning bg-opacity-25">
+             <%if(msg){%>
+                    <p class="text-danger p-1">
+                      <b><%=msg%></b>
+                    </p>
+             <%}%>
+        </div>
+          <div class="row mb-3">
+            <div class="col-md-6 col-xs-12">
+              <!-- firstname -->
+              <div class="mb-2">
+                <label for="fname" class="form-label">First Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fname"
+                  name="fname"
+                />
+              </div>
+              <!-- lastname -->
+              <div class="mb-2">
+                <label for="lname" class="form-label">Last Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lname"
+                  name="lname"
+                />
+              </div>
+              <!-- username -->
+              <div class="mb-2">
+                <label for="uname" class="form-label">User Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="uname"
+                  name="username"
+                />
+              </div>
+              <!-- gender -->
+              <div class="mb-2">
+                <label for="gender" class="form-label">Gender</label><br />
+                <label class="form-check-label" for="gender1"> Male </label>
+                <input
+                  type="radio"
+                  id="gender1"
+                  name="gender"
+                  value="male"
+                  checked
+                />
+                <label class="form-check-label" for="gender2"> Female </label>
+                <input type="radio" id="gender2" name="gender" value="female" />
+                <label class="form-check-label" for="gender3"> Other </label>
+                <input type="radio" id="gender3" name="gender" value="other" />
+              </div>
+              <!-- dob -->
+              <div class="mb-2">
+                <label for="dob" class="form-label">Date Of Birth</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="dob"
+                  name="dob"
+                />
+              </div>
+            
+                <!--  contact    -->
+                <div class="mb-3">
+                  <label for="contact" class="form-label">Contact</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="contact"
+                    name="contact"
+                  />
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <!-- email -->
+                <div class="mb-2">
+                  <label for="mail" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="mail"
+                    name="mail"
+                  />
+                </div>
+              <!-- password -->
+              <div class="mb-2">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                />
+              </div>
+              <!-- confirm password -->
+              <div class="mb-2">
+                <label for="cpassword" class="form-label"
+                  >Confirm Password</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="cpassword"
+                  name="cpassword"
+                />
+                <div>
+                  <%if(errorMsg){%>
+                    <p class="text-danger  text-end">
+                      <b><%=errorMsg%></b>
+                    </p>
+             <%}%>
+                </div>
+              </div>
+            
+              <!-- user image -->
+              <div class="mb-3">
+                <label for="user_image" class="form-label">User Image</label>
+                <input
+                  type="file"
+                  class="form-control"
+                  id="user_image"
+                  name="user_image"
+                />
+              </div>
+              <!-- id proof -->
+              <div class="mb-3">
+                <label for="id_proof" class="form-label"
+                  >Photocopy of Identity proof</label
+                >
+                <input
+                  type="file"
+                  class="form-control"
+                  id="id_proof"
+                  name="id_proof"
+                />
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-outline-light d-block mx-auto mb-3">Register</button>
+        </form>
+        <p class="text-center text-light">Already registered? <a href="/auth/sign-in">Login</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%-include('../Includes/Footer.ejs')%>

@@ -1,0 +1,27 @@
+<%- include('../Includes/Header.ejs') %>
+    <link rel="stylesheet" href="/CSS/Style.css">
+</head>
+
+<body>
+<%- include('../Includes/Nav.ejs') %>
+
+<div class="setNewDiv">
+    <div class="setNewForm">
+        <form action="/submit_new_pwd" method="POST">
+            <center><h1 class="form_heading">Set New Password</h1></center><br>
+            <%if(flash_msg){%>
+                <div class="errorMessage"><i class="fa-solid fa-triangle-exclamation"></i> <%=flash_msg%></div>
+              <%}%>
+            <p><b>Your email: <%=mail%></b></p><br>
+            <input type="hidden" value="<%=id%>" name="u_id">
+            <input type="hidden" value="<%=mail%>" name="u_mail">
+            <input type="password" placeholder="Type new password" name="pwd" class="setNewPwdInput">
+            <input type="password" placeholder="Again type the new password" name="cpwd" class="setNewPwdInput">
+            <br>
+            <input type="submit" value="Submit New Password" class="pwd_submit">
+        </form>  
+    </div>
+</div>
+
+
+<%- include('../Includes/Footer.ejs')  %>

@@ -1,0 +1,32 @@
+<%-include('../Includes/Header.ejs')%>
+<link rel="stylesheet" href="/css/authStyle.css">
+</head>
+</body>
+  <%-include('../Includes/Navbar.ejs')%>
+
+<main>
+    <div class="container py-5">
+        <div class="row bg-info bg-opacity-25 text-light">
+            <div class="col-3 d-flex align-items-center justify-content-center bg-dark p-3">
+                  <img src="/auth/<%=info.user_image%>" alt="user_image" class="img-fluid">
+            </div>
+            <div class="col-6 p-5 ">
+                <div class="mb-5">
+                    <h2 class="mb-5"> <%=info.firstname%> <%=info.lastname%></h2>
+                    <p>Mail to: <b><%=info.email%></b> </p>
+                     <p>Birthday: <%=info.dob.getDate()%> <%=info.dob.toLocaleString('default', { month: 'long' })%> <%=info.dob.getFullYear()%></p>
+                </div>
+                <div>
+                    <a href="/auth/sign-out" class="btn btn-outline-light">
+                    <b>Sign Out</b>
+                    </a>
+                </div>
+            </div>
+            <div class="col-3 d-flex align-items-center justify-content-center bg-dark p-3">
+                <img src="/auth/<%=info.identity_proof%>" alt="identity_proof" class="img-fluid">         
+            </div>
+        </div>
+    </div>
+</main>
+
+<%-include('../Includes/Footer.ejs')%>

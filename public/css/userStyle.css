@@ -1,0 +1,11 @@
+::selection{
+    background-color: black;
+}
+a{
+    text-decoration: none;
+  }
+main{
+    background-image: url('../images/background/bg2.jpg');
+    background-size: cover;
+    background-position: center;
+}

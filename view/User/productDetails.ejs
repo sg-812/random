@@ -1,0 +1,29 @@
+<%-include('../Includes/Header.ejs')%>
+<link rel="stylesheet" href="/css/userStyle.css">
+</head>
+</body>
+  <%-include('../Includes/Navbar.ejs')%>
+  <main>
+  <section>
+    <div class="container py-5">
+      <h2 class="text-center mb-3 text-light">Product details</h2>
+      <div class="card mb-3 mx-5" >
+        <div class="row g-0">
+          <div class="col-md-4 bg-light text-center py-5">
+            <img src="/product/<%=data.product_image[1]%>" class="img-fluid rounded-start" alt="product image">
+          </div>
+          <div class="col-md-8 bg-warning-subtle">
+            <div class="card-body p-5">
+              <h5 class="card-title"><%= data.product_name.charAt(0).toUpperCase() + data.product_name.slice(1) %></h5>
+              <p class="card-text">Company: <%= data.product_company.charAt(0).toUpperCase() + data.product_company.slice(1) %></p>
+              <p class="card-text">
+                <small class="text-body-secondary">Price: Rs. <%= data.product_price%></small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>     
+    </div>
+  </main> 
+  </section>
+  <%-include('../Includes/Footer.ejs')%>

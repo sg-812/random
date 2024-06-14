@@ -1,0 +1,64 @@
+<%-include('../Includes/Header.ejs')%>
+<link rel="stylesheet" href="/css/authStyle.css">
+</head>
+</body>
+  <%-include('../Includes/Navbar.ejs')%>
+
+<main>
+  <section>
+    <div class="container py-5 text-light">
+      <div class="authForm p-5 mx-auto">
+        <h2 class="text-light mb-3">Login</h2>
+        <hr />
+        <form
+          action="/auth/sign-in"
+          method="POST"
+        >
+       
+              <!-- email -->
+              <div class="mb-2">
+                <label for="mail" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="mail"
+                  name="mail"
+                />
+              </div>
+              <div class="error mb-2">
+                <%if(mailError){%>
+                       <p class="text-danger p-1">
+                         <b><%=mailError%></b>
+                       </p>
+                <%}%>
+           </div>
+              <!-- password -->
+              <div class="mb-4">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                />
+              </div>
+              <div class="error mb-2">
+                <%if(passError){%>
+                       <p class="text-danger p-1">
+                         <b><%=passError%></b>
+                       </p>
+                <%}%>
+           </div>
+           <div class="forgetPass text-end ">
+               <a href="/auth/change_password" class="text-danger"><b>Forget Password?</b></a>
+           </div>
+          <button type="submit" class="btn btn-outline-light d-block mx-auto mb-3">Login</button>
+        </form>
+        <p class="text-center text-light">Not registered yet? <a href="/auth/sign-up">Register here</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%-include('../Includes/Footer.ejs')%>
+ 

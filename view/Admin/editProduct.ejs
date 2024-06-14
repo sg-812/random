@@ -1,0 +1,32 @@
+<%-include('../Includes/Header.ejs')%>
+<link rel="stylesheet" href="/css/adminStyle.css">
+</head>
+</body>
+  <%-include('../Includes/Navbar.ejs')%>
+  
+  <main>
+     <section class="editForm">
+        <div class="container py-5 text-light">
+            <form action="/admin/newProduct" method="POST">
+                <div class="mb-3">
+                  <input type="hidden" class="form-control" name="p_id" value="<%=data._id %>">
+                </div>
+                <div class="mb-3">
+                  <label for="product_name" class="form-label">Product Name</label>
+                  <input type="text" class="form-control" id="product_name" name="p_name" value="<%=data.product_name %>">
+                </div>
+                <div class="mb-3">
+                  <label for="product_price" class="form-label">Product Price</label>
+                  <input type="text" class="form-control" id="product_price" name="p_price" value="<%=data.product_price%>">
+                </div>                
+                <div class="mb-3">
+                  <label for="product_company" class="form-label">Company</label>
+                  <input type="text" class="form-control" id="product_company" name="p_company" value="<%=data.product_company %>">
+                </div>                
+                <button type="submit" class="btn btn-outline-light">Update Product</button>
+              </form>
+        </div>
+     </section>
+  </main>
+
+<%-include('../Includes/Footer.ejs')%>

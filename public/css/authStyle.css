@@ -1,0 +1,36 @@
+::selection{
+    background-color: black;
+}
+a{
+    text-decoration: none;
+  }
+main{
+    background-image: url('../images/background/blue.webp');
+    background-color: rgb(252, 59, 59);
+    background-blend-mode:multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.authForm{
+    width:80%;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    background-color: rgba(47, 158, 192, 0.3);
+    border-radius: 15px;
+}
+
+input[type="radio"]{
+    accent-color: rgba(2, 73, 44, 0.548);
+}
+.verified{
+    padding:15% 50px!important;
+    background: linear-gradient(to left,rgba(19, 19, 19, 0.8),rgba(19,19,19,0.8)),url('../images/others/verified.png');
+    background-position: center;
+    background-size: content;
+}
+.not_verified{
+    padding:15% 50px!important;
+    background: linear-gradient(to left,rgba(19, 19, 19, 0.8),rgba(19,19,19,0.8)),url('../images/others/not_verified.png');
+    background-position: center;
+    background-size: content;
+}

@@ -1,0 +1,72 @@
+<%-include('../Includes/Header.ejs')%>
+<link rel="stylesheet" href="/css/adminStyle.css">
+</head>
+</body>
+  <%-include('../Includes/Navbar.ejs')%>
+  
+  <main>
+    <section class="viewForm">
+    <div class="container py-5">
+        <h2 class="text-center text-light"><u>All products for admin</u></h2><br>
+        <div class="row">
+            <div class="col">
+                <div class="dropdown">
+                    <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Sort by price
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="/sorting/asc">
+                            Low to High <i class="fa-solid fa-arrow-up"></i> 
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="/sorting/des">
+                            High to Low <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+            </div>
+            <div class="col text-end">
+                <form action="/admin/searchProduct" method="POST" class="mb-5">
+                    <input type="search" id="search" name="searchText" class="py-1 px-3 rounded-start" placeholder="Type to search">
+                    <button class="btn btn-warning" type="submit">Search</button>
+                </form>
+            </div>
+        </div>      
+        <%if(data.length>0){%>
+            <div class="row bg-info py-2 text-center">
+                <div class="col"><b>Serial number</b></div>
+                <div class="col"><b>Product Name</b></div>
+                <div class="col"><b>Product Price</b></div>
+                <div class="col"><b>Company</b></div>
+                <div class="col"><b>Delete</b></div>
+                <div class="col"><b>Edit</b></div>
+            </div>               
+             <%for(let i=0;i<data.length;i++){%>
+                <div class="row text-light text-center my-2">
+                    <div class="col"><%=i+1%></div>
+                    <div class="col"><%=data[i].product_name %></div>
+                    <div class="col">Rs. <%=data[i].product_price %></div>
+                    <div class="col"><%=data[i].product_company %></div>
+                    <div class="col">
+                        <a href="/admin/deleteProduct/<%=data[i]._id%>" class="btn btn-danger">
+                            <i class="fa-solid fa-trash"></i> Delete
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="/admin/editProduct/<%=data[i]._id%>" class="btn btn-success">
+                            <i class="fa-solid fa-pen-to-square"></i> Edit
+                        </a>
+                    </div>
+                </div>
+             <%}%>
+           
+        <%}else{%>
+            <p class="text-light text-center">Data not found</p>
+        <%}%>
+    </section>
+  </main>
+
+<%-include('../Includes/Footer.ejs')%>

@@ -1,0 +1,128 @@
+ Nodejs: 
+Nodejs can be said as a different version of JS.It is basically built on js and add some
+ features to it.
+It helps to run code on server,so js will not be only browser dependent when someone
+ using nodejs.
+
+Nodejs basically uses v8, the javascript engine(compiles js code to machine code) by
+ google.
+V8 is written by c++
+
+------------------------------------------------------------------------------------------------------------------
+List Out and explain the popular modules of Node.js?
+Answer: The core modules of Node.js are:
+
+http	includes classes, methods and events for creating Node.js http server.
+URL	contains methods for URL resolution and parsing.
+querystring	deals with query string.
+path	contains methods for working with file paths.
+fs	consists of classes, methods, and events for handling file I/O.
+util	util module includes utility functions useful for developers.
+
+------------------------------------------------------------------------------------------------------------------
+
+Q.writeFileSync vs writeFile  (36)
+
+writeFileSync will block code until the file will be created, so works in a synchronous
+ mode
+
+writeFile works in asynchronous mode.
+
+------------------------------------------------------------------------------------------------------------------
+
+npm -> node package manager
+
+In package.json: 
+  "scripts": {
+    "test": "testing time",
+    "start": "node server.js",  //npm start as it is a known script command
+    "start-server":"node server.js"  //npm run start-server
+  },
+
+
+^ it means if npm install runs then automatically it will upgrade the package (if any 
+upgradation is available for it)
+
+
+~ version “Approximately equivalent to version”, will update you to all future patch versions, without incrementing the minor version. 1.2.3 will use releases from 1.2.3 to <1.3.0.
+
+^ version “Compatible with version”, will update you to all future minor/patch versions, without incrementing the major version. ^1.2.3 will use releases from 1.2.3 to <2.0.0.
+------------------------------------------------------------------------------------------------------------------
+
+Q. Global Features vs Core Modules vs Third-Party Modules
+
+
+Global features: Keywords like const or function but also some global objects like 
+process
+
+Core Node.js Modules: Examples would be the file-system module ("fs"), the path 
+module ("path") or the Http module ("http")
+
+Third-party Modules: Installed via npm install - you can add any kind of feature to 
+your app via this way
+
+Global features are always available, you don't need to import them into the files 
+where you want to use them.
+
+Core Node.js Modules don't need to be installed (NO npm install is required) but 
+you need to import them when you want to use features exposed by them.
+
+Example:
+
+const fs = require('fs');
+
+You can now use the fs object exported by the "fs" module.
+
+Third-party Modules need to be installed (via npm install in the project folder) and 
+imported.
+
+Example :
+
+// In terminal/ command prompt
+npm install --save express-session
+// In code file (e.g. app.js)
+const sessions = require('express-session');
+
+------------------------------------------------------------------------------------------------------------------
+
+Global & Local npm Packages:
+
+We have added nodemon as a local dependency to our project.
+
+The good thing about local dependencies is that you can share projects without the 
+node_modules folder (where they are stored) and you can run npm install in a
+project to then re-create that node_modules folder. This allows you to share only 
+your source code, hence reducing the size of the shared project vastly.
+
+The attached course code snippets also are shared in that way, hence you need to 
+run npm install in the extracted packages to be able to run my code!
+
+I showed that nodemon app.js would not work in the terminal or command line 
+because we don't use local dependencies there but global packages.
+
+You could install nodemon globally if you wanted (this is NOT required though - 
+because we can just run it locally): npm install -g nodemon would do the trick. 
+Specifically the -g flag ensures that the package gets added as a global package 
+which you now can use anywhere on your machine, directly from inside the terminal 
+or command prompt.
+
+------------------------------------------------------------------------------------------------------------------
+
+ExpressJs is a framework which can be used as third party package in the 
+node project.
+ 
+------------------------------------------------------------------------------------------------------------------ 
+ 
+Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` 
+to show where the warning was created)
+(node:9108) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+
+------------------------------------------------------------------------------------------------------------------
+
+/* 
+for single upload:  upload.single("name")
+for multiple upload:  upload.array("name",count)
+for multiple field upload:  upload.fields([{name:"name",maxCount:count},{name:"name",maxCount:count}])
+for formdata:  upload.none()
+*/

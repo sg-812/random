@@ -1,0 +1,31 @@
+<%-include('../Includes/Header.ejs')%>
+
+</head>
+</body>
+  <%-include('../Includes/Navbar.ejs')%>
+  <link rel="stylesheet" href="/css/userStyle.css">
+<main>
+  <section class="viewProduct">
+  <div class="container py-5">
+    <h2 class="text-center mb-4 text-light">All products</h2>
+    <%if(data.length>0){%>             
+        <div class="row ">
+         <%for(let prod of data){%>
+                <div class="col-lg-3 col-md-4 mb-4">
+                  <div class="card text-center p-3" >
+                    <img src="/product/<%=prod.product_image[0]%>" class="card-img-top" alt="product image" height="250">
+                    <div class="card-body">
+                      <h5 class="card-title"><%=prod.product_name.charAt(0).toUpperCase() + prod.product_name.slice(1) %></h5>
+                      <a href="/user/single-product/<%=prod._id%>" class="btn btn-primary">View Details</a>
+                    </div>
+                  </div>            
+                </div>
+         <%}%>       
+    <%}else{%>
+        <p>Data not found</p>
+    <%}%>
+</div>
+</section>
+</main>
+
+<%-include('../Includes/Footer.ejs')%>

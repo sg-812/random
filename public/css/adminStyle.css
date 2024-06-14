@@ -1,0 +1,22 @@
+::selection{
+  background-color: black;
+}
+a{
+  text-decoration: none;
+}
+main{
+    background: linear-gradient(to left,rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('../images/background/bg1.jpg');
+}
+.banner{
+    height:400px;
+    background: linear-gradient(to left,rgba(245, 56, 56, 0.6),rgba(1, 13, 47, 0.6)),url('../images/background/banner.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

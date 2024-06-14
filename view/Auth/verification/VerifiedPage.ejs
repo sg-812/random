@@ -1,0 +1,20 @@
+<%-include('../../Includes/Header.ejs')%>
+<link rel="stylesheet" href="/css/authStyle.css">
+</head>
+</body>
+  <%-include('../../Includes/Navbar.ejs')%>
+  <main>
+    <section class="py-5">
+        <div class="container px-5">
+            <div class="card mb-3 border border-warning verified text-center" >                
+                <div class="card-body text-warning"> 
+                  <h3 class="card-title">Congrats! You have successfully verified your account. </h3>
+                  <p class="card-text"> Go to <a href="/auth/sign-in" >Login Page</a></p>
+                </div>
+            </div>              
+        </div>
+    </section>
+  </main>
+
+
+<%- include('../../Includes/Footer.ejs')  %>

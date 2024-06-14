@@ -15,12 +15,12 @@ const session=require('express-session');
 const mongodb_session=require('connect-mongodb-session')(session);  //used to store data in a session  
 
 const AuthModel=require('./model/authModel')
-// routing
+// routing path
 const adminRouting=require('./router/adminRouter')
 const userRouting=require('./router/userRouter');
 const authRouting=require('./router/authRouter');
 
-// view
+// view folder setup
 appServer.set('view engine','ejs');
 appServer.set('views','view');
 
@@ -34,7 +34,7 @@ appServer.use(flash());
 appServer.use(express.static(path.join(__dirname,'public')))
 appServer.use(express.static(path.join(__dirname,'uploads')))
 
-// session
+// session part
 //to store data in mongodb session collection
 const session_store=new mongodb_session({
 	uri:process.env.DB_URL,

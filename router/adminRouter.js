@@ -48,6 +48,7 @@ const upload = multer({
   limits: { fieldSize: 1024 * 1024 * 5 },
 });
 
+//add product paths
 router.get("/admin/add-product", addForm);
 // router.post("/admin/postData",upload.single('product_image'), postValue);
 router.post("/admin/postData", upload.array("product_images", 2), postValue);
